@@ -1,0 +1,18 @@
+# The file to compile
+OBJS= sdl_opengl.c
+
+# The name of the final .exe
+OBJS_NAME = sdl_opengl
+
+# Paths to the frameworks
+FRAMEWORK_PATHS = -F/Library/Frameworks
+
+# Name of compiler
+CC = gcc
+
+# List of frameworks to link to
+LINKER_FLAGS = -framework SDL2 -framework SDL2_image -framework SDL2_ttf -framework SDL2_mixer -framework OpenGL
+
+# default so all you have to call is make
+default:
+	$(CC) $(OBJS) -o $(OBJS_NAME) $(FRAMEWORK_PATHS) $(LINKER_FLAGS)
